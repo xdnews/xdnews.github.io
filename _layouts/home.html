@@ -11,7 +11,7 @@ pagination:
     <div class="widget HTML is-visible type-featured" data-version="2" id="HTML17">
       <div class="widget-content">
         <div class="featured-items">
-          {% for post in site.posts limit:6 %}
+          {% for post in site.posts limit:3 %}
           <div class="featured-item cs item-{{ forloop.index0 }}">
             <a class="featured-inner" href="{{ post.url }}" title="{{ post.title }}">
               <span class="entry-image-wrap {% if post.image %} is-image {% else %} is-video {% endif %}">
