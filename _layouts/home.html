@@ -53,7 +53,7 @@ pagination:
 
       <div class="block-right">
         {% for post in technology_posts limit:3 offset:1 %}
-        <div class="block-item item-{{ forloop.index0 }}">
+        <div class="block-item item-{{ forloop.index0 | plus:1 }}">
           <a title="{{ post.title }}" class="entry-image-wrap {% if post.image %} is-image {% else %} is-video {% endif %}" href="{{ post.url }}">
             <span class="entry-thumb lazy-ify" data-image="{{ post.image | default: 'default-image.jpg' }}" 
                   style="background-image:url({{ post.image | default: 'default-image.jpg' }})">
