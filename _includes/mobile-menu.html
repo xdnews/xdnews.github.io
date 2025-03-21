@@ -1,19 +1,15 @@
 <div id="slide-menu">
-  <div class="slide-menu-header">
-    <div class="mobile-search">
-      <form action="/search" class="search-form" role="search">
-        <input autocomplete="off" class="search-input" name="query" placeholder="Search Here..." type="search" value="">
-        <button class="search-action" type="submit"></button>
-      </form>
-    </div>
-    <div class="mobile-toggle-wrap">
-      <a class="hide-supermag-pro-mobile-menu" href="javascript:;" role="button"></a>
-    </div>
-  </div>
-  
+<div class="slide-menu-header">
+<div class="mobile-search">
+<form action="/search" class="search-form" role="search">
+<input autocomplete="off" class="search-input" name="q" placeholder="Search" type="search" value="">
+<button class="search-action" type="submit" value=""></button>
+</form>
+</div>
+<a class="hide-litespot-pro-mobile-menu" href="javascript:;" role="button"></a>
+</div>
 <div class="slide-menu-flex">
-<div class="supermag-pro-mobile-menu" id="supermag-pro-mobile-menu">
-<ul id="main-mobile-nav" role="menubar">
+<div class="litespot-pro-mobile-menu" id="litespot-pro-mobile-menu"><ul id="main-mobile-nav" role="menubar">
 {% for link in site.data.navigation.topmenu %}
 {% if link.sublinks %}
 <li class="has-sub">
@@ -40,33 +36,21 @@
 </li>
 {% endif %}
 {% endfor %}
-</ul>
-</div>
-
-  <div class="mobile-menu-footer">
-  
-<div class="mobile-topbar-social social-bg"><ul class="topbar-ul social-icons social">
-{% for link in site.data.social-footer-links.social %}
-<li class="{{ link.name }} link-{{ forloop.index0 }}"><a alt="{{ link.name }}" class="{{ link.name }}" href="{{ link.url }}" rel="noopener noreferrer" target="_blank" title="{{ link.name }}"></a></li>
-{% endfor %}
 </ul></div>
-<div class="mobile-topbar-menu"><ul class="topbar-ul link-list">
- {% for link in site.data.navigation.navmenu %}
-    <li>
-      <a href="{{ link.url }}" alt="{{ link.title }}">{{ link.title }}</a>
-      {% if link.sublinks %}
-        <ul class="sub-links">
-          {% for sublink in link.sublinks %}
-            <li><a href="{{ sublink.url }}" alt="{{ sublink.title }}">{{ sublink.title }}</a></li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    </li>
-  {% endfor %}
+<div class="mm-footer">
+<div class="mm-social"><ul class="social-icons social">
+<li class="facebook link-0"><a alt="facebook" class="facebook btn" href="https://www.facebook.com/templateify" rel="noopener noreferrer" target="_blank" title="facebook"></a></li>
+<li class="twitter link-1"><a alt="twitter" class="twitter btn" href="https://twitter.com/templateify" rel="noopener noreferrer" target="_blank" title="twitter"></a></li>
+<li class="youtube link-2"><a alt="youtube" class="youtube btn" href="https://www.youtube.com/c/Templateify_Blogger" rel="noopener noreferrer" target="_blank" title="youtube"></a></li>
+<li class="instagram link-3"><a alt="instagram" class="instagram btn" href="https://www.instagram.com/templateifydotcom/" rel="noopener noreferrer" target="_blank" title="instagram"></a></li>
+<li class="rss link-4"><a alt="rss" class="rss btn" href="https://www.templateify.com/" rel="noopener noreferrer" target="_blank" title="rss"></a></li>
+</ul></div>
+<div class="mm-menu"><ul class="link-list">
+<li><a href="/">Home</a></li>
+<li><a href="https://litespot-templateify.blogspot.com/p/about.html">About Us</a></li>
+<li><a href="https://litespot-templateify.blogspot.com/p/contact-us.html">Contact Us</a></li>
+<li><a href="https://litespot-templateify.blogspot.com/?hl=ar">RTL Version</a></li>
 </ul></div>
 </div>
-  
 </div>
-
 </div>
-  <div class="overlay"></div>
