@@ -4,7 +4,7 @@ title: "AMD Radeon RX 9070 Preorders Expected for March 23 Release"
 description: "AMD's Radeon RX 9070 series, based on RDNA 4 architecture, is expected to be available for preorder on March 23, with a potential late Q1 launch."
 slug: amd-radeon-rx-9070-preorders
 image: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxLCj3qqd3RnnRwiqEiTKG3khsjQaULmFLm18ifTINiqPn89vJM7AC2nDt4QyIqA4kDqQkwuHs7wK4UuyiglBIEO9wDqdgt5yjHtwlBsyu1hSH53fi1wtzpghWwVSHewJjAvmYah_tG1T5lfh2MPbvQZ4VQWwyeepDuIvfaQuLfOzfjpbTWfAUDYYaMCg/s320/AMD-Radeon-RX-9070-XT-graphics-card-696x696.webp
-categories: [Technology, GPUs]
+categories: [Technology, gadgets, GPUs]
 tags: [AMD, Radeon, RX 9070, RDNA 4, GPU Release]
 author: pierrelepagnol
 ---
