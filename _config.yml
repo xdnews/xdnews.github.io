@@ -1,8 +1,8 @@
 
 title: MMFooty
 description: Discover a wide variety of topics ranging from e-commerce, news, and blogs to tutorials, technology, health, travel, gaming, and finance. Stay informed, entertained, and inspired with expert advice, product reviews, and helpful resources tailored to your interests.
-domain: www.mmfooty.com      # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
-url: https://www.mmfooty.com # the base hostname and protocol for your site, e.g. http://example.com
+domain: xdnews.github.io      # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+url: https://xdnews.github.io # the base hostname and protocol for your site, e.g. http://example.com
 locale: en_US
 permalink: pretty
 baseurl: ""
