@@ -13,35 +13,72 @@ pagination:
 	
 <main id="main-wrapper">
 	
-      <div class="trending section" id="trending" name="Trending Posts">
-        <div class="widget PopularPosts" data-version="2" id="PopularPosts2">
-          <div class="widget-title title-wrap">
-            <h3 class="title">Trending News</h3>
-          </div>
-          <div class="widget-content">
-            <div class="trending-items">
-              {% for post in site.posts limit:6 %}
-<div class="trending-item item-{{ forloop.index0 }}">
-<a class="entry-image-wrap {{ post.featured_image ? 'is-image' : 'is-video' }}" href="{{ post.url }}" title="{{ post.title }}">
-{% if post.image %}
-<span class="entry-thumb lazy-ify" data-image="{{ post.image }}" style="background-image:url({{ post.image }})"></span>
-{% else %}
-<span class="entry-thumb lazy-ify" data-image="/images/off.png" style="background-image:url(/images/off.png)"></span>
-{% endif %}
-<span class="trending-count">{{ forloop.index }}</span>
-</a>
-                  <div class="entry-header">
-{% if post.categories %} <span class="entry-category">{{ post.categories[0] }}</span> {% endif %} 
-                    <h2 class="entry-title">
-                      <a href="{{ post.url | relative_url }}" title="{{ post.title }}">{{ post.title }}</a>
-                    </h2>
-                  </div>
-                </div>
-              {% endfor %}
+<div class="widget HTML is-visible type-block" data-version="2" id="HTML10">
+  <div class="widget-title title-wrap">
+    <h3 class="title">Technology</h3>
+    <a href="/category/technology/" class="wt-l">View all</a>
+  </div>
+
+  {% assign technology_posts = site.posts | where_exp: "post", "post.categories contains 'technology'" %}
+
+  {% if technology_posts.size > 0 %}
+  <div class="widget-content">
+    <div class="content-block block-items">
+      <div class="block-left">
+        {% for post in technology_posts limit:1 %}
+        <div class="block-item item-{{ forloop.index0 }}">
+          <a title="{{ post.title }}" class="entry-image-wrap {% if post.image %} is-image {% else %} is-video {% endif %}" href="{{ post.url }}">
+            <span class="entry-thumb lazy-ify" data-image="{{ post.image | default: 'default-image.jpg' }}" 
+                  style="background-image:url({{ post.image | default: 'default-image.jpg' }})">
+            </span>
+          </a>
+          <div class="entry-header">
+            <h2 class="entry-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+            <div class="entry-meta">
+              <span class="entry-author mi">
+                <span class="sp">by</span><span class="author-name">{{ post.author }}</span>
+              </span>
+              <span class="entry-time mi">
+                <span class="sp">•</span>
+                <time class="published" datetime="{{ post.date | date: '%Y-%m-%d' }}">
+                  {{ post.date | date: '%Y-%m-%d' }}
+                </time>
+              </span>
             </div>
           </div>
         </div>
+        {% endfor %}
       </div>
+
+      <div class="block-right">
+        {% for post in technology_posts limit:3 offset:1 %}
+        <div class="block-item item-1">
+          <a title="{{ post.title }}" class="entry-image-wrap {% if post.image %} is-image {% else %} is-video {% endif %}" href="{{ post.url }}">
+            <span class="entry-thumb lazy-ify" data-image="{{ post.image | default: 'default-image.jpg' }}" 
+                  style="background-image:url({{ post.image | default: 'default-image.jpg' }})">
+            </span>
+          </a>
+          <div class="entry-header">
+            <h2 class="entry-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+            <div class="entry-meta">
+              <span class="entry-time mi">
+                <time class="published" datetime="{{ post.date | date: '%B %d, %Y' }}">
+                  {{ post.date | date: '%B %d, %Y' }}
+                </time>
+              </span>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <p>No posts available in Technology category.</p>
+  {% endif %}
+</div>
+
+	
 
 	
 	
