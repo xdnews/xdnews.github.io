@@ -1,0 +1,13 @@
+<div class="about-author">
+<div class="avatar-container">
+{% if author.picture %}
+<span class="author-avatar lazy-ify" data-image="{{ '/images/authors/' | append: author.picture | relative_url }}" style="background-image:url({{ '/images/authors/' | append: author.picture | relative_url }})"></span>
+{% endif %}
+</div>
+<div class="author-description">
+<span class="author-title">{{ author.name }}</span>
+{% if author.job %}
+<p class="author-text excerpt">{{ author.job }}</p>
+{% endif %}
+</div>
+</div>

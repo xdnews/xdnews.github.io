@@ -1,0 +1,47 @@
+<div class="widget RandomPosts" data-version="2" id="RandomPosts3">
+  <div class="widget-title title-wrap">
+    <h3 class="title">Popular Posts</h3>
+  </div>
+  <div class="widget-content sidebar-posts">
+    <!-- Postingan pertama (besar) -->
+    {% assign random_posts = site.posts | shuffle %}
+    {% for post in random_posts limit:1 %}
+      <div class="random-post post big-post item-0">
+        <a class="entry-image-wrap is-image" href="{{ post.url | relative_url }}" title="{{ post.title }}">
+{% if post.image %}
+<span class="entry-thumb lazy-ify" data-image="{{ post.image }}" style="background-image:url({{ post.image }})"></span>
+{% else %}
+<span class="entry-thumb lazy-ify" data-image="/images/off.png" style="background-image:url(/images/off.png)"></span>
+{% endif %}
+        </a>
+        <div class="entry-header">
+          <span class="entry-category">{{ post.categories[0] }}</span>
+          <h2 class="entry-title">
+            <a href="{{ post.url | relative_url }}" title="{{ post.title }}">{{ post.title }}</a>
+          </h2>
+        </div>
+      </div>
+    {% endfor %}
+
+    <!-- 3 postingan berikutnya (kecil) -->
+    {% for post in random_posts limit:3 offset:1 %}
+      <div class="random-post post item-{{ forloop.index }}">
+        <a class="entry-image-wrap is-image" href="{{ post.url | relative_url }}" title="{{ post.title }}">
+{% if post.image %}
+<span class="entry-thumb lazy-ify" data-image="{{ post.image }}" style="background-image:url({{ post.image }})"></span>
+{% else %}
+<span class="entry-thumb lazy-ify" data-image="/images/off.png" style="background-image:url(/images/off.png)"></span>
+{% endif %}
+        </a>
+        <div class="entry-header">
+          <span class="entry-category">{{ post.categories[0] }}</span>
+          <h2 class="entry-title">
+            <a href="{{ post.url | relative_url }}" title="{{ post.title }}">{{ post.title }}</a>
+          </h2>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% include ads/sidebar-ads.html %}

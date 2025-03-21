@@ -1,0 +1,139 @@
+
+title: MMFooty
+description: Discover a wide variety of topics ranging from e-commerce, news, and blogs to tutorials, technology, health, travel, gaming, and finance. Stay informed, entertained, and inspired with expert advice, product reviews, and helpful resources tailored to your interests.
+domain: www.mmfooty.com      # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+url: https://www.mmfooty.com # the base hostname and protocol for your site, e.g. http://example.com
+locale: en_US
+permalink: pretty
+baseurl: ""
+twitter:
+  username: SCIAM_FR
+  card: summary
+highlighter: rouge
+
+logo: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEin-yOkrSkvSvLX-921gqh__wUmEPM8BX5D3smW0XWiidLvAxwWP-vNclkNlh4DGyBGfpzstKFeA8r3xTRnzPVur47e-95n5FvAj3Hi4r72bOeqZspONFWQ8kUy5Tb475T1OO2aLjtNFW7EcgxZPFAVHd-YP9QJubc7ax2EwBNj9HMp0L2IJsWyuXk6jGA/s393/MMFOOTY.PNG'
+
+markdown: kramdown
+asciidoc: true
+
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      permalink: /:slug/
+      toc: true
+      
+social-network-links:
+  github: 'SCIAM-FR'
+  twitter: 'SCIAMVOX'
+  medium: 'sciam-fr'
+  linkedin: 'sciamfr'
+  www: 'sciam.fr'
+  gitlab: 'sciam'
+
+exclude:
+  - LICENSE.adoc
+  - README.adoc
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - .idea
+  - .jekyll-cache
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby
+
+keep_files:
+  - images
+
+asciidoc: {}
+
+asciidoctor:
+  base_dir: :docdir
+  safe: unsafe
+  excerpt_separator: "\n//more\n"
+  attributes:
+    sectlinks: true
+    stem: latexmath
+    idseparator: _
+    source-highlighter: rouge
+    source-language: java
+    rouge-css: style
+    rouge-style: github
+    icons: font
+    imagesdir: "/images"
+
+plugins:
+  - jekyll-paginate-v2
+  - jekyll-auto-authors
+  - jekyll-asciidoc
+  - asciidoctor-diagram
+  - liquid_reading_time
+  - liquid_pluralize
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-toc
+ 
+pagination:
+  enabled: true
+  per_page: 12
+  permalink: '/:num/'
+  title: ':title - page :num'
+  sort_field: 'date'
+  sort_reverse: true
+
+autopages:
+  enabled: true
+  categories:
+    enabled: true
+    layouts:
+       - 'list.html'
+    title: 'Articles in :categories'
+    silent: false
+    slugify:
+      mode: 'default'
+      cased: true
+
+  # Other autopage configs stay the same
+
+  tags:
+    layouts:
+      - "autopage_tags.html"
+    title: "Articles taggué avec #:tag"
+    permalink: "/tag/:tag"
+    silent: false
+    slugify:
+      mode: "default"
+      case: true
+
+  authors:
+    enabled: true
+    data: '_data/authors.yml' # Data file with the author details
+    layouts: 
+      - 'autopage_author.html' # We'll define this layout later
+    title: 'Articles par :author'
+    permalink: '/author/:author/'
+    slugify:
+      mode: 'default' # choose from [raw, default, pretty, ascii or latin]
+      cased: true # if true, the uppercase letters in slug will be converted to lowercase ones.
+
+  collections:
+      enabled: false
+
+feed:
+  excerpt_only: true
+
+toc:
+  min_level: 2
+  max_level: 6
+  ordered_list: false
+  no_toc_section_class: no_toc_section
+  list_id: toc
+  list_class: section-nav
+  sublist_class: ''
+  item_class: toc-entry
+  item_prefix: toc-

@@ -1,0 +1,44 @@
+# Top Menu
+topmenu:
+- title: Home
+  url: '/'
+- title: News
+  url: '/category/news'
+- title: Education
+  url: '/category/education'
+- title: Technology
+  url: '/category/technology'
+- title: Health
+  url: '/category/health'
+- title: Travel
+  url: '/category/travel'
+- title: Entertainment
+  url: '/category/entertainment'
+- title: Menu
+  sublinks:
+    - title: Finance
+      url: '/category/finance' 
+
+# Nav Menu
+navmenu:
+- title: Home
+  url: "/"
+- title: Contact
+  url: "/contact-us"
+- title: Privacy Policy
+  url: "/privacy-policy"
+
+# Footer Menu
+footmenu:
+- title: Home
+  url: "/"
+- title: About Us
+  url: "/about-us"
+- title: Contact
+  url: "/contact-us"
+- title: Privacy Policy
+  url: "/privacy-policy"
+- title: Cookie Policy
+  url: "/cookie-policy"
+- title: Terms of Use
+  url: "/terms-of-use"

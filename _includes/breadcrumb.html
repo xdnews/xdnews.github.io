@@ -1,0 +1,39 @@
+<nav id="breadcrumb">
+  <a class="home" href="{{ site.url }}">Home</a>
+  <em class="delimiter"></em>
+  {% if page.categories %}
+    {% assign primary_category = page.categories | first %}
+    <a class="label" href="{{ site.url }}/category/{{ primary_category | slugify }}/">{{ primary_category | strip | escape }}</a>
+    <em class="delimiter"></em>
+  {% endif %}
+  <span class="current">{{ page.title | escape }}</span>
+</nav>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}"
+    }
+    {% if page.categories %}
+      ,{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ page.categories | first | strip | escape }}",
+        "item": "{{ site.url }}/category/{{ page.categories | first | slugify }}/"
+      }
+    {% endif %}
+    ,{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.title | escape }}",
+      "item": "{{ page.url | absolute_url }}"
+    }
+  ]
+}
+</script>

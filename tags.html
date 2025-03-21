@@ -1,0 +1,23 @@
+---
+layout: default
+title: 'Tags'
+---
+
+<div class="p-8 bg-grayBg">
+  <div class="bg-white py-10 px-14 rounded-lg shadow-md">
+    <p class="text-2xl font-bold text-navysciam">Tags</p>
+    <div class="relative inline-block text-left">
+      {% assign tagsTries = site.tags | sort %}
+      {% for tag in tagsTries %}
+      {% assign tagName = tag | first %}
+      {% assign tagNameRaw = tagName | downcase | slugify: "raw" %}
+      <a href="{{ '/tag/' | relative_url }}{{ tagNameRaw }}/" class="m-1">
+        <button
+          class="rounded-full px-3 my-2 min-w-[100px] transition-colors duration-300 border-0.5 bg-{{ tagNameRaw }}-100 border-{{ tagNameRaw }}-200 text-{{ tagNameRaw }}-500">
+          {{ tagName }}
+        </button>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>

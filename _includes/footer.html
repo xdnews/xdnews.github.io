@@ -1,0 +1,30 @@
+<footer id="footer-wrapper"><div class="primary-footer flex-center"><div class="container row-x1"><div class="supermag-pro-about-section section" id="supermag-pro-about-section" name="About Section"><div class="widget Image" data-version="2" id="Image100">
+<a class="footer-logo custom-image" href="{{ site.baseurl }}/">{% if site.logo %}<img alt="Supermags theme free" id="Image100_img" src="{{ site.logo }}">{% endif %}</a>
+<div class="footer-info">
+<h3 class="title">About Us</h3>
+<p class="image-caption excerpt">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
+</div>
+</div><div class="widget LinkList" data-version="2" id="LinkList103">
+<ul class="social-icons social social-bg">
+{% for link in site.data.social-footer-links.social %}
+<li class="{{ link.name }} link-{{ forloop.index0 }}"><a class="{{ link.name }} btn" href="{{ link.url }}" rel="noopener noreferrer" target="_blank" title="{{ link.name }}"></a></li>
+{% endfor %}
+</ul>
+</div></div>
+</div>
+</div>
+<div class="footerbar flex-center">
+<div class="container row-x1">
+<div class="footer-copyright section" id="footer-copyright" name="Footer Copyright"><div class="widget Text" data-version="2" id="Text101">
+<a href="{{ '/' | relative_url }}" rel="noopener noreferrer" target="_blank">{{site.title}}</a>
+</div></div>
+<div class="footer-menu section" id="footer-menu" name="Footer Menu"><div class="widget LinkList" data-version="2" id="LinkList104">
+<ul class="link-list list-style">
+{% for link in site.data.navigation.footmenu %}
+<li><a href="{{ link.url }}">{{ link.title }}</a></li>
+{% endfor %}
+</ul>
+</div></div>
+</div>
+</div>
+</footer>

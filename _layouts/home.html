@@ -1,0 +1,173 @@
+---
+layout: default
+pagination:
+  enabled: true
+---
+
+{% include ads/header-ads-wrap.html %}
+
+<div class="flex-center" id="content-wrapper" style="transform: none;">
+<div class="featured container row-x1 section" id="featured" name="Featured Posts">
+<div class="widget PopularPosts" data-version="2" id="PopularPosts1"> 
+<div class="widget-content"> <div class="featured-items"> <div class="featured-left"> 
+{% for post in site.posts limit:1 %} <div class="featured-item item-{{ forloop.index0 }}"> 
+<a class="entry-image-wrap" href="{{ post.url | relative_url }}" title="{{ post.title }}">
+{% if post.image %}
+<span class="entry-thumb lazy-ify" data-image="{{ post.image }}" style="background-image:url({{ post.image }})"></span>
+{% else %}
+<span class="entry-thumb lazy-ify" data-image="/images/off.png" style="background-image:url(/images/off.png)"></span>
+{% endif %}
+</a> 
+<div class="entry-header"> 
+{% if post.categories %} <span class="entry-category">{{ post.categories[0] }}</span> {% endif %} 
+<h2 class="entry-title"> <a href="{{ post.url | relative_url }}" title="{{ post.title }}">{{ post.title }}</a> </h2> 
+</div> </div> {% endfor %} </div> 
+<div class="featured-right"> {% for post in site.posts limit:3 offset:1 %} 
+<div class="featured-item item-{{ forloop.index0 | plus:1 }}"> 
+<a class="entry-image-wrap" href="{{ post.url }}" title="{{ post.title }}">
+{% if post.image %}
+<span class="entry-thumb lazy-ify" data-image="{{ post.image }}" style="background-image:url({{ post.image }})"></span>
+{% else %}
+<span class="entry-thumb lazy-ify" data-image="/images/off.png" style="background-image:url(/images/off.png)"></span>
+{% endif %}</a> 
+<div class="entry-header"> 
+{% if post.categories %} <span class="entry-category">{{ post.categories[0] }}</span> {% endif %} 
+<h2 class="entry-title"> <a href="{{ post.url | relative_url }}" title="{{ post.title }}">{{ post.title }}</a> </h2>
+</div> </div> {% endfor %} </div> </div> </div> </div> </div></div>
+
+<div class="flex-center" id="content-wrapper" style="transform: none;">
+<div class="container row-x1" style="transform: none;">
+	
+<main id="main-wrapper">
+	
+      <div class="trending section" id="trending" name="Trending Posts">
+        <div class="widget PopularPosts" data-version="2" id="PopularPosts2">
+          <div class="widget-title title-wrap">
+            <h3 class="title">Trending News</h3>
+          </div>
+          <div class="widget-content">
+            <div class="trending-items">
+              {% for post in site.posts limit:6 %}
+<div class="trending-item item-{{ forloop.index0 }}">
+<a class="entry-image-wrap {{ post.featured_image ? 'is-image' : 'is-video' }}" href="{{ post.url }}" title="{{ post.title }}">
+{% if post.image %}
+<span class="entry-thumb lazy-ify" data-image="{{ post.image }}" style="background-image:url({{ post.image }})"></span>
+{% else %}
+<span class="entry-thumb lazy-ify" data-image="/images/off.png" style="background-image:url(/images/off.png)"></span>
+{% endif %}
+<span class="trending-count">{{ forloop.index }}</span>
+</a>
+                  <div class="entry-header">
+{% if post.categories %} <span class="entry-category">{{ post.categories[0] }}</span> {% endif %} 
+                    <h2 class="entry-title">
+                      <a href="{{ post.url | relative_url }}" title="{{ post.title }}">{{ post.title }}</a>
+                    </h2>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+	
+	
+{% include ads/home-ads.html %}
+
+
+
+  {% assign posts = paginator.posts %}
+  {% assign category_name = "Latest News" %}
+  {% assign navigation = site.data.navigation %}
+ 
+  {% if page.url contains '/category/news/' %}
+    {% assign posts = paginator.posts | where_exp: "post", "post.categories contains 'news'" %}
+    {% assign category_name = "Sujets d'actualité" %}
+  {% elsif page.url contains '/category/' %}
+    {% assign category_segments = page.url | split: '/' %}
+    {% if category_segments.size > 2 %}
+      {% assign category_id = category_segments[2] %}
+      {% for nav_item in navigation %}
+        {% if nav_item.url contains category_id %}
+          {% assign category_name = nav_item.title %}
+        {% endif %}
+      {% endfor %}
+      {% assign posts = paginator.posts | where_exp: "post", "post.categories contains category_id" %}
+      {% assign paginate_path = '/category/' | append: category_id | append: '/:num/' %}
+      {% assign first_page_path = '/category/' | append: category_id %}
+      {% else %}  
+    {% assign paginate_path = '/posts/:num/' %}
+    {% assign first_page_path = '/posts/' %}  
+    {% endif %}
+  {% else %}
+    {% assign paginate_path = '/posts/:num' %}
+    {% assign first_page_path = '/posts/' %}
+  {% endif %}
+<div class="main section" id="main" name="Main Posts"><div class="widget Blog" data-version="2" id="Blog1">
+<div class="blog-posts-title title-wrap"><h3 class="title">{{ category_name }}</h3></div>
+    {% if posts and posts.size &gt; 0 %}
+    <div class="blog-posts hfeed index-post-wrap" id="post-list">
+      {% for post in paginator.posts %}
+      <article class="blog-post hentry index-post post-{{ forloop.index0 }}">
+<a class="entry-image-wrap is-image" href="{{ post.url | relative_url }}" title="{{ post.title }}">
+{% if post.image %}
+<span class="entry-thumb lazy-ify" data-image="{{ post.image }}" style="background-image:url({{ post.image }})"></span>
+{% else %}
+<span class="entry-thumb lazy-ify" data-image="/images/off.png" style="background-image:url(/images/off.png)"></span>
+{% endif %}
+</a>
+<div class="entry-header">
+<span class="entry-category">{{ post.categories[0] }}</span>
+<h2 class="entry-title"><a class="entry-title-link" href="{{ post.url | relative_url }}" rel="bookmark" title="{{ post.title }}">{{ post.title }}</a></h2>
+<p class="line-clamp-3">{{ post.excerpt | strip_html | truncatewords:15 }}</p>
+{% if post.auteurs and post.auteurs.size &gt; 1 %}
+<div>
+            <strong>
+              {% for auteur in post.auteurs %}
+              {% assign author = site.data.authors[auteur] %}
+              {% if author.name %}
+              {% if forloop.first %}
+              {% elsif forloop.last %}
+              et
+              {% else %}
+              ,
+              {% endif %}
+              <span><a href="{{ '/author/' | append: auteur | relative_url }}">{{ author.name }}</a></span>
+              {% endif %}
+              {% endfor %}
+            </strong>
+          </div>
+          {% elsif post.author %}
+          {% assign author = site.data.authors[post.author] %}
+          {% if author.name %}
+<div class="entry-meta">
+<span class="entry-author">
+<span class="by">by</span><span class="author-name"><a href="{{ '/author/' | append: post.author | relative_url }}">{{ author.name }}</a></span>
+<span class="entry-time"><span class="on">-</span><time class="published" datetime="{{ post.date | date_to_string }}">{{ post.date | date_to_string }}</time></span>
+</span>
+</div>
+          {% endif %}
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+      {% else %}
+      {% endif %}
+    </div>
+	
+{% include pagination.html %}
+
+</div></div>
+	
+</main>
+<!-- End Post -->
+<!-- Sidebar -->
+<aside id="sidebar-wrapper">
+   <div class="sidebar supermag-pro-widget-ready section" id="sidebar" name="Sidebar">
+      {% include sidebar.html %}
+     </div>
+    </aside>
+<!--End Sidebar -->
+</div></div>
+
+{% include ads/footer-ads-wrap.html %}

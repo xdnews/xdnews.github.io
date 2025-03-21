@@ -1,0 +1,33 @@
+<!-- This has the username of author. The one that you set with "author: name" in front-matter-->
+{% assign author_username = page.pagination.author %}
+
+<!-- Use page.pagination.author_data only if you have data file setup correctly -->
+{% assign author = page.pagination.author_data %}
+<!--
+  Now you can use the author variable anyhow.
+  It has all the data as defined inside _data/authors.yml for the current username.
+-->
+
+<div class="blog-posts hfeed index-post-wrap" id="post-list">
+      {% for post in paginator.posts %}
+        {% include postbox.html %}
+      {% endfor %}
+</div>
+
+
+  {% if paginator.total_pages > 1 %}
+  <ul class="flex justify-center list-none mt-6">
+    {% if paginator.previous_page %}
+    <li class="mx-2">
+      <a class="bg-gray-200 hover:bg-gray-300 text-black py-2 px-4 rounded"
+        href="{{ paginator.previous_page_path | relative_url | replace: '//', '/' }}">&larr; Articles précédents</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="mx-2">
+      <a class="bg-gray-200 hover:bg-gray-300 text-black py-2 px-4 rounded"
+        href="{{ paginator.next_page_path | relative_url | replace: '//', '/' }}">Articles suivants &rarr;</a>
+    </li>
+    {% endif %}
+  </ul>
+  {% endif %}

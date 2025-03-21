@@ -1,0 +1,22 @@
+<article class="blog-post hentry index-post post-{{ forloop.index0 }}">
+<a class="entry-image-wrap is-image" href="{{ post.url | relative_url }}" title="{{ post.title }}">
+{% if post.image %}
+<span class="entry-thumb lazy-ify" data-image="{{ post.image }}" style="background-image:url({{ post.image }})"></span>
+{% else %}
+<span class="entry-thumb lazy-ify" data-image="/images/off.png" style="background-image:url(/images/off.png)"></span>
+{% endif %}
+</a>
+<div class="entry-header">
+<span class="entry-category">{{ post.categories[0] }}</span>
+<h2 class="entry-title"><a class="entry-title-link" href="{{ post.url | relative_url }}" rel="bookmark" title="{{ post.title }}">{{ post.title }}</a></h2>
+<p class="entry-excerpt excerpt">{{ post.excerpt | strip_html | truncatewords:15 }}</p>
+          <div class="entry-meta">
+            {% assign author = site.data.authors[post.author] %}
+            {% if author %}
+            <span class="by">by</span><span class="author-name"><a href="{{ '/author/' | append: post.author | relative_url }}">{{ author.name }}</a></span>
+            {% endif %}
+            <span class="entry-time"><span class="on">-</span><time class="published" datetime="{{ post.date | date_to_string }}">{{ post.date | date_to_string }}</time></span>
+          </div>
+
+  </div>
+</article>

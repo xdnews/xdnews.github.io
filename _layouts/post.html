@@ -1,0 +1,121 @@
+---
+layout: default
+markdown: true
+pagination:
+  enabled: true
+---
+{% include ads/header-ads-wrap.html %}
+<div class="flex-center" id="content-wrapper" style="transform: none;"><div class="container row-x1" style="transform: none;">
+<main id='main-wrapper'><div class="main section" id="main" name="Main Posts"><div class="widget Blog" data-version="2" id="Blog1"><div class="blog-posts hfeed item-post-wrap">
+<article class="blog-post hentry item-post"><div class='item-post-inner'>
+
+<div class="entry-header blog-entry-header has-meta">
+{% include breadcrumb.html %}
+<h1 class="entry-title">{{ page.title }}</h1>
+<div class="entry-meta"><div class="align-left">
+{% if page.auteurs.size > 1 %}{% for auteur in page.auteurs %}{% assign author = site.data.authors[auteur] %}{% if author.name %}
+<span class="entry-author"><span class="author-avatar-wrap">
+{% if page.author %}
+<span class="author-avatar lazy-ify" data-image="{{ '/images/authors/' | append: author.picture | relative_url }}" style="background-image:url({{ '/images/authors/' | append: author.picture | relative_url }})">
+</span></span>
+<span class="by">by</span><span class="author-name">{{ author.name }}</span></span>{% endif %}
+<span class="entry-time"><span class="on">-</span><time class="published" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>
+{% if page.last_modified_at %}
+(Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
+{% endif %}
+{% endif %}{% endfor %}{% else %}{% assign author = site.data.authors[page.author] %}{% if author.name %}
+<span class="entry-author"><span class="author-avatar-wrap">
+{% if page.author %}
+<span class="author-avatar lazy-ify" data-image="{{ '/images/authors/' | append: author.picture | relative_url }}" style="background-image:url({{ '/images/authors/' | append: author.picture | relative_url }})">
+</span></span>
+<span class="by">by</span><span class="author-name">{{ author.name }}</span></span>{% endif %}
+<span class="entry-time"><span class="on">-</span><time class="published" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>
+{% if page.last_modified_at %}
+(Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
+{% endif %}
+{% endif %}{% endif %}	
+</div></div>
+</div>
+	    
+<div class="entry-content-wrap"><div class="post-body entry-content" id="post-body">
+      {{content}}
+      {% if page.vimeo-id %}
+      {{page.vimeo-id | prepend: 'video::' | append: '[vimeo,640,480]' | asciidocify}}
+      {% endif %}
+</div></div>
+	
+<div class="entry-labels"><span class="labels-label">Tags:</span>
+        {% if page.tags.size > 0 %}
+        {% for tag in page.tags %}
+        {% assign tagSlug = tag | downcase | slugify: "raw" %}
+<a class="label-link" href="{{ '/tag/' | relative_url }}{{ tagSlug }}/" rel="tag">#{{ tag }}</a>
+        {% endfor %}
+        {% endif %}
+</div>
+
+
+{% include social-share.html %}
+	
+<footer class="post-footer">
+        <!-- list authors -->
+        {% if page.auteurs.size > 1 %}
+        {% for auteur in page.auteurs %}
+        {% assign author = site.data.authors[auteur] %}
+        {% if author.name %}
+        <a href="{{ '/author/' | append: auteur | append: '/index.html' | relative_url }}">
+          {% include author_bio.html %}
+        </a>
+        {% endif %}
+        {% endfor %}
+        {% else %}
+        {% assign author = site.data.authors[page.author] %}
+        {% if author.name %}
+        <a href="{{ '/author/' | append: page.author | relative_url }}">
+          {% include author_bio.html %}
+        </a>
+        {% endif %}
+        {% endif %}
+	
+<!-- Related Post -->
+{% assign size = site.related_posts | size %}
+  {% if size != 0 %}
+  <div id="related-wrap" class="show-ify">
+    <div class="title-wrap related-title">
+      <span class="title"><i class="fa fa-list-alt fa-fw" aria-hidden="true"></i>You might like</span>
+    </div>
+    <div class="supermag-pro-related-content">
+      <div class="related-posts">
+        {% for post in site.related_posts limit:3 %}
+        <div class="related-item post item-{{ forloop.index0 }}">
+          <a title="{{ post.title }}" class="entry-image-wrap is-image" href="{{ post.url | relative_url }}">
+{% if post.image %}
+<span class="entry-thumb lazy-ify" data-image="{{ post.image }}" style="background-image:url({{ post.image }})"></span>
+{% else %}
+<span class="entry-thumb lazy-ify" data-image="/images/off.png" style="background-image:url(/images/off.png)"></span>
+{% endif %}
+          </a>
+          <div class="entry-header">
+            <h2 class="entry-title"><a href="{{ post.url | relative_url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+<!-- End Related Post -->
+</footer>
+	
+<div class="post-nav">
+{% if page.previous.url %}<a class="post-nav-newer-link" href="{{ page.next.url | relative_url }}" id="Blog1_post-nav-newer-link">Previous Post</a>{% endif %}
+{% if page.next.url %}<a class="post-nav-older-link" href="{{page.next.url | relative_url}}" id="Blog1_post-nav-older-link">Next Post</a>{% endif %}
+</div>
+</div></article>
+</div></div></div></main>
+
+<aside id="sidebar-wrapper"><div class="sidebar supermag-pro-widget-ready section" id="sidebar" name="Sidebar">{% include sidebar.html %}</div></aside>
+
+</div></div>
+
+
+{% include ads/footer-ads-wrap.html %}

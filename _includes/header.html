@@ -1,0 +1,92 @@
+<header id="header-wrapper">
+  
+<nav class="topbar-wrap flex-center">
+<div class="container row-x1">
+<div class="topbar-items">
+<div class="topbar-menu section" id="topbar-menu" name="Topbar Menu"><div class="widget LinkList" data-version="2" id="LinkList105">
+<ul class="topbar-ul link-list">
+  {% for link in site.data.navigation.navmenu %}
+    <li>
+      <a href="{{ link.url }}" alt="{{ link.title }}">{{ link.title }}</a>
+      {% if link.sublinks %}
+        <ul class="sub-links">
+          {% for sublink in link.sublinks %}
+            <li><a href="{{ sublink.url }}" alt="{{ sublink.title }}">{{ sublink.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+</div></div>
+<div class="topbar-social section" id="topbar-social" name="Topbar Icons"><div class="widget LinkList" data-version="2" id="LinkList106">
+<ul class="topbar-ul social-icons social">
+{% for link in site.data.social-footer-links.social %}
+<li class="{{ link.name }} link-{{ forloop.index0 }}"><a alt="{{ link.name }}" class="{{ link.name }}" href="{{ link.url }}" rel="noopener noreferrer" target="_blank" title="{{ link.name }}"></a></li>
+{% endfor %}
+</ul>
+</div></div>
+</div>
+</div>
+</nav>
+  
+  
+<div class="main-header"><div class="header-inner show"><div class="header-header flex-center"><div class="container row-x1"><div class="header-items"><div class="flex-left">
+<div class="main-logo section" id="main-logo" name="Header Logo"><div class="widget Header" data-version="2" id="Header1">
+<a class="mobile-menu-toggle" href="javascript:;" role="button" title="Menu"></a>
+<a class="logo-img" href="{{ '/' | relative_url }}">
+{% if site.logo %}
+<img alt="{{ site.title }}" data-height="80" data-width="393" src="{{ site.logo }}" title="{{ site.title }}">
+{% else %}
+<h1 id="h1-off">{{ site.title }}</h1>
+{% endif %}
+</a>
+</div>
+</div>
+<div class="supermag-pro-main-nav section" id="supermag-pro-main-nav" name="Header Menu">
+<div class="widget LinkList show-menu" data-version="2" id="LinkList101">
+<ul id="supermag-pro-main-nav-menu" role="menubar">
+{% for link in site.data.navigation.topmenu %}
+{% if link.sublinks %}
+<li class="has-sub">
+<a href="#" role="menuitem" alt="{{ link.title }}">{{ link.title }}</a>
+<ul class="sub-menu m-sub">
+{% for sublink in link.sublinks %}
+{% if sublink.title == '---' %}
+<li><hr class="dropdown-divider"></li>
+{% else %}
+<li>
+<a role="menuitem" href="{{ sublink.url }}" alt="{{ sublink.title }}">
+{{ sublink.title }}
+</a>
+</li>
+{% endif %}
+{% endfor %}
+</ul>
+</li>
+{% else %}
+<li>
+<a role="menuitem" href="{{ link.url }}" alt="{{ link.title }}">
+{{ link.title }}
+</a>
+</li>
+{% endif %}
+{% endfor %}
+</ul>
+</div>
+</div>
+</div>
+<div class="flex-right">
+<div class="main-toggle-wrap">
+<a class="main-toggle-style darkmode-toggle" href="javascript:;" role="button"></a>
+<a class="main-toggle-style show-search" href="javascript:;" role="button" title="Telusuri"></a>
+</div>
+</div>
+<div id="main-search-wrap">
+<div class="main-search">
+<form action="/search.html" class="search-form" role="search">
+<input autocomplete="off" class="search-input" name="query" placeholder="Search Here..." type="search" value="">
+</form>
+<a class="hide-search" href="javascript:;" role="button" title="Telusuri"></a>
+</div></div></div></div></div></div></div>
+</header>

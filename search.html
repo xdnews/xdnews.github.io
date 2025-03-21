@@ -1,0 +1,41 @@
+---
+layout: search
+permalink: /search.html
+---
+<div class="flex-center" id="content-wrapper" style="transform: none;"><div class="container row-x1" style="transform: none;">    
+<main id='main-wrapper'><div class="main section" id="main" name="Main Posts"><div class="widget Blog" data-version="2" id="Blog1">
+
+<div class="queryMessage">
+<span class="query-info query-success"><span id="search-term-display" ></span></span>
+</div>
+<div class="blog-posts hfeed index-post-wrap" id="search-results"></div>
+
+<script>
+    <!--
+    window.store = {
+        {% for post in site.posts %}
+            "{{ post.url | slugify}}": {
+                "id": "{{ post.url | absolute_url | xml_escape }}",
+                "url": "{{ post.url | relative_url }}",
+                "title": "{{ post.title | xml_escape }}",
+                "image": "{{ '/images/vignettes/' | append: post.vignette | relative_url }}",
+                "author": "{{ site.data.authors[post.author].name | xml_escape }}",
+                "date": "{{ post.date | date: "%d/%m/%Y" }}",
+                "excerpt": "{{ post.excerpt | strip_html | normalize_whitespace | escape_once | replace: "\n", "" | xml_escape }}",
+                "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+                            }
+            {% unless forloop.last %},{% endunless %}
+            {% endfor %}
+    };
+     -->
+</script>
+<script src="/js/lunr.js"></script>
+<script src="/js/search.js"></script>
+
+</div></div></main>
+<aside id="sidebar-wrapper">
+   <div class="sidebar supermag-pro-widget-ready section" id="sidebar" name="Sidebar">
+      {% include sidebar.html %}
+     </div>
+    </aside>
+</div></div>
