@@ -39,11 +39,9 @@
 </ul></div>
 <div class="mm-footer">
 <div class="mm-social"><ul class="social-icons social">
-<li class="facebook link-0"><a alt="facebook" class="facebook btn" href="https://www.facebook.com/templateify" rel="noopener noreferrer" target="_blank" title="facebook"></a></li>
-<li class="twitter link-1"><a alt="twitter" class="twitter btn" href="https://twitter.com/templateify" rel="noopener noreferrer" target="_blank" title="twitter"></a></li>
-<li class="youtube link-2"><a alt="youtube" class="youtube btn" href="https://www.youtube.com/c/Templateify_Blogger" rel="noopener noreferrer" target="_blank" title="youtube"></a></li>
-<li class="instagram link-3"><a alt="instagram" class="instagram btn" href="https://www.instagram.com/templateifydotcom/" rel="noopener noreferrer" target="_blank" title="instagram"></a></li>
-<li class="rss link-4"><a alt="rss" class="rss btn" href="https://www.templateify.com/" rel="noopener noreferrer" target="_blank" title="rss"></a></li>
+{% for link in site.data.social-footer-links.social %}
+<li class="{{ link.name }} link-{{ forloop.index0 }}"><a alt="{{ link.name }}" class="{{ link.name }}" href="{{ link.url }}" rel="noopener noreferrer" target="_blank" title="{{ link.name }}"></a></li>
+{% endfor %} 
 </ul></div>
 <div class="mm-menu"><ul class="link-list">
 {% for link in site.data.navigation.navmenu %}
