@@ -1,0 +1,38 @@
+<div class="flex-center" id="featured-wrapper">
+  <div class="featured container row-x1 section" id="featured" name="Featured News">
+    <div class="widget HTML is-visible type-featured" data-version="2" id="HTML17">
+      <div class="widget-content">
+        <div class="featured-items">
+          {% for post in site.posts limit:6 %}
+          <div class="featured-item cs item-{{ forloop.index0 }}">
+            <a class="featured-inner" href="{{ post.url }}" title="{{ post.title }}">
+              <span class="entry-image-wrap {% if post.image %} is-image {% else %} is-video {% endif %}">
+                <span class="entry-thumb lazy-ify" data-image="{{ post.image | default: 'default-image.jpg' }}" 
+                      style="background-image:url({{ post.image | default: 'default-image.jpg' }})">
+                </span>
+              </span>
+              <div class="entry-header entry-info">
+                {% if post.categories and post.categories.first %}
+                  <span class="entry-category">{{ post.categories.first }}</span>
+                {% endif %}
+                <h2 class="entry-title">{{ post.title }}</h2>
+                <div class="entry-meta">
+                  <span class="entry-author mi">
+                    <span class="sp">by</span><span class="author-name">{{ post.author }}</span>
+                  </span>
+                  <span class="entry-time mi">
+                    <span class="sp">•</span>
+                    <time class="published" datetime="{{ post.date | date: '%Y-%m-%d' }}">
+                      {{ post.date | date: '%B %d, %Y' }}
+                    </time>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
