@@ -1,0 +1,36 @@
+<div class="widget HTML is-visible type-grid" data-version="2" id="HTML12">
+  <div class="widget-title title-wrap">
+    <h3 class="title">Gadgets</h3>
+    <a href="/category/gadgets/" class="wt-l">View all</a>
+  </div>
+
+  {% assign gadget_posts = site.posts | where_exp: "post", "post.categories contains 'gadgets'" %}
+
+  {% if gadget_posts.size > 0 %}
+  <div class="widget-content">
+    <div class="content-block grid-items">
+      {% for post in gadget_posts limit:3 %}
+      <div class="grid-item item-{{ forloop.index0 }}">
+        <a title="{{ post.title }}" class="entry-image-wrap {% if post.image %} is-image {% else %} is-video {% endif %}" href="{{ post.url }}">
+          <span class="entry-thumb lazy-ify" data-image="{{ post.image | default: 'default-image.jpg' }}" 
+                style="background-image:url({{ post.image | default: 'default-image.jpg' }})">
+          </span>
+        </a>
+        <div class="entry-header">
+          <h2 class="entry-title"><a title="{{ post.title }}" href="{{ post.url }}">{{ post.title }}</a></h2>
+          <div class="entry-meta">
+            <span class="entry-time mi">
+              <time class="published" datetime="{{ post.date | date: '%Y-%m-%d' }}">
+                {{ post.date | date: '%Y-%m-%d' }}
+              </time>
+            </span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% else %}
+  <p>No posts available in Gadgets category.</p>
+  {% endif %}
+</div>
