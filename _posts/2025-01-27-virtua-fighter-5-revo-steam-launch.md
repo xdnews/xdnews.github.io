@@ -4,7 +4,7 @@ title: "Virtua Fighter 5 R.E.V.O Makes Its PC Debut on Steam with New Launch Tra
 description: "Virtua Fighter 5 R.E.V.O is now available on Steam, bringing a fresh experience to fans with new features, exclusive content, and a 20% discount!"
 slug: virtua-fighter-5-revo-steam-launch
 image: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHWAI5qjH0ZtlZTorbJbweHLZsfK5dWziewIwo99tAXRf4L5QRkK20PJsXTZEyO5noW7iirtxLx8EaMq21M9I0EIon3eGRrrY-EHUSy4yCfPaFx9beh1L6rDh9wUkIIX228Vg2arfOY5r18mIcJwDnrjoT3MUv23tx2eLYz_lpO7lcNAMCQZ-4fcLI_UE/s320/Virtua-Fighter5-R.E.V.O.-KeyArt_16_9-min-728x410.png
-categories: [gaming, news]
+categories: [gaming, news, technology]
 tags: [Virtua Fighter 5, Steam, PC gaming, fighting games, Virtua Fighter, gaming news]
 author: loichermann
 ---
