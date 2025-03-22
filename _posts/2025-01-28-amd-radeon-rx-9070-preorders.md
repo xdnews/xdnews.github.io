@@ -7,6 +7,8 @@ image: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxLCj3qqd3RnnR
 categories: [Technology, gadgets, GPUs]
 tags: [AMD, Radeon, RX 9070, RDNA 4, GPU Release]
 author: pierrelepagnol
+popular: true
+date: 2025-01-28
 ---
 
 <div style="text-align: center;">
