@@ -11,11 +11,11 @@ footer:
     url: "https://www.templateify.com/"
 
 widget:
-  - name: "facebook"
+  - name: "Facebook"
     url: "https://www.facebook.com/exnews1"
-  - name: "twitter"
+  - name: "Twitter"
     url: "https://twitter.com/templateify"
-  - name: "youtube"
+  - name: "Youtube"
     url: "https://www.youtube.com/c/Templateify_Blogger"
-  - name: "instagram"
+  - name: "Instagram"
     url: "https://www.instagram.com/templateifydotcom/"
