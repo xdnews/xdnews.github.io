@@ -3,7 +3,7 @@
 <div class="widget-content">
 <ul class="social-icons social social-bg">
 {% for link in site.data.social-follow.widget %}
-<li class="{{ link.name }} link-{{ forloop.index0 }}"><a class="{{ link.name }} btn" href="{{ link.url }}" rel="noopener noreferrer" target="_blank" title="{{ link.name }}" alt="{{ link.name }}"><span class="text">{{ link.name }}</span></a></li>
+<li class="{{ link.font }} link-{{ forloop.index0 }}"><a class="{{ link.font }} btn" href="{{ link.url }}" rel="noopener noreferrer" target="_blank" title="{{ link.name }}" alt="{{ link.name }}"><span class="text">{{ link.name }}</span></a></li>
 {% endfor %}
 </ul>
 </div>
