@@ -12,14 +12,14 @@ footer:
 
 widget:
   - name: "Facebook"
-  - font: "facebook"
+    font: "facebook"
     url: "https://www.facebook.com/exnews1"
   - name: "Twitter"
-  - font: "twitter"
+    font: "twitter"
     url: "https://twitter.com/templateify"
   - name: "Youtube"
-  - font: "youtube"
+    font: "youtube"
     url: "https://www.youtube.com/c/Templateify_Blogger"
   - name: "Instagram"
-  - font: "instagram"
+    font: "instagram"
     url: "https://www.instagram.com/templateifydotcom/"
