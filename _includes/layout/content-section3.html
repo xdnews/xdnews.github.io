@@ -1,0 +1,36 @@
+<div class="widget HTML is-visible type-video" data-version="2" id="HTML11">
+  <div class="widget-title title-wrap">
+    <h3 class="title">Videos</h3>
+    <a href="/category/videos/" class="wt-l">View all</a>
+  </div>
+
+  {% assign video_posts = site.posts | where_exp: "post", "post.categories contains 'videos'" %}
+
+  {% if video_posts.size > 0 %}
+  <div class="widget-content">
+    <div class="content-block video-items">
+      {% for post in video_posts limit:3 %}
+      <div class="video-item item-{{ forloop.index0 }}">
+        <a title="{{ post.title }}" class="entry-image-wrap {% if post.image %} is-image {% else %} is-video {% endif %}" href="{{ post.url }}">
+          <span class="entry-thumb lazy-ify" data-image="{{ post.image | default: 'default-image.jpg' }}" 
+                style="background-image:url({{ post.image | default: 'default-image.jpg' }})">
+          </span>
+        </a>
+        <div class="entry-header">
+          <h2 class="entry-title"><a title="{{ post.title }}" href="{{ post.url }}">{{ post.title }}</a></h2>
+          <div class="entry-meta">
+            <span class="entry-time mi">
+              <time class="published" datetime="{{ post.date | date: '%B %d, %Y' }}">
+                {{ post.date | date: '%B %d, %Y' }}
+              </time>
+            </span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% else %}
+  <p>No video posts available.</p>
+  {% endif %}
+</div>
