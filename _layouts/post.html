@@ -76,34 +76,36 @@ pagination:
         {% endif %}
         {% endif %}
 	
-<!-- Related Post -->
-{% assign size = site.related_posts | size %}
-  {% if size != 0 %}
-  <div id="related-wrap" class="show-ify">
-    <div class="title-wrap related-title">
-      <span class="title"><i class="fa fa-list-alt fa-fw" aria-hidden="true"></i>You might like</span>
-    </div>
-    <div class="supermag-pro-related-content">
-      <div class="related-posts">
-        {% for post in site.related_posts limit:3 %}
-        <div class="related-item post item-{{ forloop.index0 }}">
-          <a title="{{ post.title }}" class="entry-image-wrap is-image" href="{{ post.url | relative_url }}">
-{% if post.image %}
-<span class="entry-thumb lazy-ify" data-image="{{ post.image }}" style="background-image:url({{ post.image }})"></span>
-{% else %}
-<span class="entry-thumb lazy-ify" data-image="/images/off.png" style="background-image:url(/images/off.png)"></span>
-{% endif %}
+<div id="related-wrap" class="type-related">
+  <div class="title-wrap related-title">
+    <span class="title"><span class="t-text">You might like</span></span>
+  </div>
+  <div class="litespot-pro-related-content">
+    <div class="related-posts">
+      {% assign related_posts = site.posts | where_exp: "post", "post.categories == page.categories" | limit:3 %}
+      {% if related_posts.size > 0 %}
+        {% for post in related_posts %}
+        <div class="related-item item-{{ forloop.index0 }}">
+          <a title="{{ post.title }}" class="entry-image-wrap {% if post.image %} is-image {% else %} is-video {% endif %}" href="{{ post.url }}">
+            <span class="entry-thumb lazy-ify" data-image="{{ post.image | default: 'default-image.jpg' }}" style="background-image:url({{ post.image | default: 'default-image.jpg' }})"></span>
           </a>
           <div class="entry-header">
-            <h2 class="entry-title"><a href="{{ post.url | relative_url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+            <h2 class="entry-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+            <div class="entry-meta">
+              <span class="entry-time mi">
+                <time class="published" datetime="{{ post.date | date: '%B %d, %Y' }}">{{ post.date | date: '%B %d, %Y' }}</time>
+              </span>
+            </div>
           </div>
         </div>
         {% endfor %}
-      </div>
+      {% else %}
+        <p>No related posts found.</p>
+      {% endif %}
     </div>
   </div>
-  {% endif %}
-<!-- End Related Post -->
+</div>
+
 </footer>
 	
 <div class="post-nav">
