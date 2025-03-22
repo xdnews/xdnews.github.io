@@ -11,7 +11,7 @@ twitter:
   card: summary
 highlighter: rouge
 
-logo: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjo6cul26eJS1OrQL1VASdwl_IArBQ2BEE7sLK4qcD_q1_Zndmbw3adTY-zFAOG1dxE9NRNWZVck4X2BYLOGnBpHE5BbGKXQzmMaLP6vD4N6g4x4zMvtP4SvPsg3dUL3oU3o2c-yHHp0z0/s1600/logo.png'
+logo: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEggaBbKL92jpvLy7G61zro8cp9SiR6wwwmqMWRlMX-j1TksuMiP09ZI13MOpU_Xg5LYKaMp77crrmF8PHZHtbQayrX1Y_Cmp5t_tNto97SgRVSPiLbWQlAx62i-mkbx92Dic0h0mXrq5-UD3q7tudrGh3kUJe80vQvzMTZ5qvroXSxwVRX5hKgmcrS3opw/s221/logo.png'
 
 markdown: kramdown
 asciidoc: true
