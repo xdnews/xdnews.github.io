@@ -4,7 +4,7 @@ title: "AMD’s Initial Pricing Leaks Reveal Ambitious Plans for Radeon RX 9070 
 description: "Leaks from a Bulgarian retailer suggest AMD initially planned higher prices for the Radeon RX 9070 series GPUs, despite unexpected performance expectations."
 slug: amd-initial-pricing-radeon-rx-9070-xt
 image: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitlDttcWmt4JTvyfRMigWIYu5cwPijguCNZi5WSYzQaLHa4qIzoeIcA8Zh-Ek_ckUANHt0EHnyZcmGz5EA9FVUaHZ-xS8XIuiG-xiEUHVC1ayWbrPbUaVTMhTIjjftyIopBPyy4v4g9Lw4G0JRsN2rYas2Kzt26Wds6Bn7q9XDG6SqwYlUdM07gX-rUbM/s600/RX-9070-XT-728x410.png
-categories: [technology, tech, GPUs, AMD]
+categories: [technology, tech, android, GPUs, AMD]
 tags: [AMD, Radeon RX 9070 XT, RDNA 4, GPU, pricing, PowerColor, leaks, CES, NVIDIA]
 author: pierrelepagnol
 ---
