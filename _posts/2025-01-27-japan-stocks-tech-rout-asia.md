@@ -4,7 +4,7 @@ title: "Japan Stocks Hit by Spread of Tech Sell-Off from U.S."
 description: "A rout in U.S. technology stocks over concerns sparked by a Chinese AI startup has spread to Asian markets, with Japan’s Nikkei 225 suffering losses."
 slug: japan-stocks-tech-rout-asia
 image: https://static01.nyt.com/images/2025/01/28/multimedia/28stocks-plqb/28stocks-plqb-superJumbo.jpg?quality=75&auto=webp
-categories: [finance, stock-market, technology]
+categories: [finance, android, stock-market, technology]
 tags: [Japan, stocks, technology, Nikkei 225, market-crash, artificial-intelligence, Nvidia]
 author: loichermann
 ---
