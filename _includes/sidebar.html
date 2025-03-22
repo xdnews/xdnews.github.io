@@ -43,4 +43,39 @@
 
 
 
+<div class="widget HTML type-mini" data-version="2" id="HTML8">
+  <div class="widget-title title-wrap">
+    <h3 class="title">Latest Deals</h3>
+  </div>
+  <div class="widget-content">
+    <div class="mini-items">
+      {% assign latest_posts = site.posts | sort: "date" | reverse %}
+      {% for post in latest_posts limit:4 %}
+      <div class="mini-item item-{{ forloop.index0 }}">
+        <a title="{{ post.title }}" class="entry-image-wrap {% if post.image %} is-image {% else %} is-video {% endif %}" 
+           href="{{ post.url }}">
+          <span class="entry-thumb lazy-ify" data-image="{{ post.image | default: 'default-image.jpg' }}" 
+                style="background-image:url({{ post.image | default: 'default-image.jpg' }})">
+          </span>
+        </a>
+        <div class="entry-header">
+          <h2 class="entry-title">
+            <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+          </h2>
+          <div class="entry-meta">
+            <span class="entry-time mi">
+              <time class="published" datetime="{{ post.date | date: '%B %d, %Y' }}">
+                {{ post.date | date: '%B %d, %Y' }}
+              </time>
+            </span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+
 {% include ads/sidebar-ads.html %}
