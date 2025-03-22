@@ -4,8 +4,8 @@ title: "Watch Hesgoal: Live Football Streaming Online"
 description: "Discover Hesgoal, a reliable and free platform for live football streaming of global matches."
 slug: "watch-hesgoal-live-streaming"
 image: https://play-lh.googleusercontent.com/3RlafG5-5zNAMymy2_J3vZgnRHyFFqgTL1E_x28CiA-ItAW5PEYz1KUlQVM7WELJaB8
-categories: [Sports, Streaming, Football]
-tags: [Football, gadgets, Hesgoal, videos, Live Streaming]
+categories: [Sports, Streaming, videos, Football]
+tags: [Football, gadgets, Hesgoal, Live Streaming]
 author: pierrelepagnol
 ---
 
