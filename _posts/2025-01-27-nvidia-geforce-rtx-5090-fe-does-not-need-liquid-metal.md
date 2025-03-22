@@ -4,7 +4,7 @@ title: Nvidia GeForce RTX 5090 FE Does Not Necessarily Require Liquid Metal
 description: "Testing reveals that traditional thermal paste performs nearly as well as liquid metal in the Nvidia GeForce RTX 5090 Founders Edition, with only a minimal temperature difference."
 slug: nvidia-geforce-rtx-5090-fe-does-not-need-liquid-metal
 image: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7doSXnRs6lRnf_W5EOTTdTfrVdBt1H8-0ThBCgGTsamdH346rnqkCgXZ-GsSRjj-WIMkH3il2iUWMxbNqgPGiKEzIre654M-J-z_QcAnabyXj4JgfYVmIuhyphenhyphenp17mjW4bfbbHpig7tHVClH4VqJ8NNn4zVVSCHR50lh1JzDwpUO5Xt3gNtI2g3Q51GZjM/s600/Nvidia-RTX-5090-PCB-696x696.webp
-categories: [technology, GPUs]
+categories: [technology, android, GPUs]
 tags: [Nvidia, RTX 5090, Liquid Metal, Thermal Paste, Performance]
 author: pierrelepagnol
 ---
