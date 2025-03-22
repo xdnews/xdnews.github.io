@@ -7,6 +7,8 @@ image: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHWAI5qjH0ZtlZ
 categories: [gaming, news, gadgets, technology]
 tags: [Virtua Fighter 5, Steam, PC gaming, fighting games, Virtua Fighter, gaming news]
 author: loichermann
+popular: true
+date: 2025-01-27
 ---
 
 <div style="text-align: center;">
